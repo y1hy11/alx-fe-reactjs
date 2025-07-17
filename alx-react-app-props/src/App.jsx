@@ -1,4 +1,5 @@
 import "./App.css";
+import { UserContext } from "./context/UserContext.js";
 import UserProfile from "./components/UserProfile.jsx";
 
 function App() {
@@ -10,9 +11,9 @@ function App() {
   };
   
   return (
-    <>
-      <UserProfile userData={userData} />
-    </>
+    <UserContext.Provider value={userData}>
+      <UserProfile />
+    </UserContext.Provider>
   );
 }
 

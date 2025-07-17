@@ -1,4 +1,7 @@
-function UserDetails({ userData }) {
+import { useContext } from 'react';
+
+function UserDetails() {
+  const userData = useContext(userContext);
   return (
     <div>
       <p>Name: {userData.name}</p>
