@@ -17,9 +17,9 @@
      };
 
      return (
-       <div style={{ padding: '20px' }}>
+       <div style={{ padding: '20px', textAlign: 'center' }}>
          <h1>Contact Us</h1>
-         <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit} style={{ maxWidth: '400px', display: 'flex', flexDirection: 'column', margin: '0 auto' }}>
            <input
              type="text"
              name="name"
