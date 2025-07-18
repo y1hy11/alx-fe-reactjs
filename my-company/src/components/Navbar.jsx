@@ -9,6 +9,7 @@ function Navbar() {
       left: 0,
       width: '100%',
       padding: '10px 0',
+      backgroundColor: 'transparent',
     }}>
       <nav>
         <ul style={{ 
