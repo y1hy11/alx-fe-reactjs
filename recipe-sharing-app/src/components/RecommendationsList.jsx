@@ -1,8 +1,8 @@
-import { useRecipesStore } from './recipeStore';
+import { useRecipeStore } from './recipeStore';
 
 const RecommendationsList = () => {
-  const recipes = useRecipesStore(state => state.recipes);
-  const searchTerm = useRecipesStore(state => state.searchTerm);
+  const recipes = useRecipeStore(state => state.recipes);
+  const searchTerm = Store(state => state.searchTerm);
 
   const filteredRecipes = recipes.filter(recipe =>
     recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
