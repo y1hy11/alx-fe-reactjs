@@ -2,7 +2,7 @@ import { useRecipeStore } from './recipeStore';
 
 const RecommendationsList = () => {
   const recipes = useRecipeStore(state => state.recipes);
-  const searchTerm = Store(state => state.searchTerm);
+  const searchTerm = useRecipeStore(state => state.searchTerm);
 
   const filteredRecipes = recipes.filter(recipe =>
     recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
