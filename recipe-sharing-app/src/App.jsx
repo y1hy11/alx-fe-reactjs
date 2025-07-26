@@ -3,6 +3,7 @@ import RecipeList from './components/RecipeList'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeDetails from './components/RecipeDetails'
 import FavoritesList from './components/FavoritesList'
+import RecommendationsList from './components/RecommendationsList'
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/add" element={<AddRecipeForm />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
         <Route path="/favorites" element={<FavoritesList />} />
+        <Route path="/recommendations" element={<RecommendationsList />} />
         <Route path="*" element={<h2>Page Not Found</h2>} />
       </Routes>
     </Router>
