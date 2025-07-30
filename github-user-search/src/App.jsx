@@ -17,8 +17,8 @@ function App() {
     try {
       const userData = await getUserDetails(username);
       setUser(userData);
-    } catch (err) {
-      setError('User not found. Please try another username.');
+    } catch (error) {
+      setError(`User not found: ${error.message}`);
     } finally {
       setLoading(false);
     }
