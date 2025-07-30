@@ -7,6 +7,16 @@ const Search = () => {
     const [error, setError] = useState('');
     const [userData, setUserData] = useState(null);
 
+    const fetchUserData = async (username) => {
+        try {
+            const data = await getUserDetails(username);
+            setUserData(data);
+        } catch {
+            setError("Looks like we cant find the user");
+            setUserData(null);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (username.trim()) {
@@ -14,15 +24,8 @@ const Search = () => {
             setError('');
             setUserData(null);
             
-            try {
-                const data = await getUserDetails(username.trim());
-                setUserData(data);
-            } catch {
-                setError("Looks like we cant find the user");
-                setUserData(null);
-            } finally {
-                setLoading(false);
-            }
+            await fetchUserData(username.trim());
+            setLoading(false);
         }
     };
 
