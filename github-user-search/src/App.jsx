@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Search from './components/Search';
 import UserCard from './components/UserCard';
-import { getUserDetails } from './services/githubAPI';
+import { getUserDetails } from './services/githubService';
 
 function App() {
   const [user, setUser] = useState(null);

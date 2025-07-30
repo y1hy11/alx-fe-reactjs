@@ -19,3 +19,12 @@ export const getUserDetails = async (username) => {
     throw new Error(`User not found: ${error.message}`);
   }
 };
+
+export const fetchUserData = async (username) => {
+  try {
+    const userDetails = await getUserDetails(username);
+    return userDetails;
+  } catch (error) {
+    throw new Error(`Error fetching user data: ${error.message}`);
+  }
+};
