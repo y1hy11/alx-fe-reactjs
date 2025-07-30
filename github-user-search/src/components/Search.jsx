@@ -18,7 +18,7 @@ const Search = () => {
                 const data = await getUserDetails(username.trim());
                 setUserData(data);
             } catch {
-                setError("Looks like we can't find the user");
+                setError("Looks like we cant find the user");
                 setUserData(null);
             } finally {
                 setLoading(false);
