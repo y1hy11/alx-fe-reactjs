@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { getUserDetails } from '../services/githubService';
 
-const Search = ({ onSearch }) => {
+const Search = () => {
     const [username, setUsername] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -11,22 +12,17 @@ const Search = ({ onSearch }) => {
         if (username.trim()) {
             setLoading(true);
             setError('');
+            setUserData(null);
+            
             try {
-                const response = await fetch(`https://api.github.com/users/${username.trim()}`);
-                const data = await response.json();
-                
-                if (response.ok) {
-                    setUserData(data);
-                    onSearch(username.trim());
-                } else {
-                    setError("Looks like we can't find the user");
-                    setUserData(null);
-                }
-            } catch {
-                setError("An error occurred");
+                const data = await getUserDetails(username.trim());
+                setUserData(data);
+            } catch (error) {
+                setError("Looks like we can't find the user");
                 setUserData(null);
+            } finally {
+                setLoading(false);
             }
-            setLoading(false);
         }
     };
 
@@ -46,11 +42,23 @@ const Search = ({ onSearch }) => {
             </form>
 
             {loading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
+            {error && <div className="error">{error}</div>}
             {userData && (
-                <div className="user-info">
-                    <img src={userData.avatar_url} alt={userData.login} className="avatar" />
-                    <h2>{userData.login}</h2>
+                <div className="user-card">
+                    <img src={userData.avatar_url} alt={userData.login} className="user-avatar" />
+                    <div className="user-info">
+                        <h2>{userData.name || userData.login}</h2>
+                        <p className="username">@{userData.login}</p>
+                        {userData.bio && <p className="bio">{userData.bio}</p>}
+                        <div className="user-stats">
+                            <span>Followers: {userData.followers}</span>
+                            <span>Following: {userData.following}</span>
+                            <span>Repos: {userData.public_repos}</span>
+                        </div>
+                        <a href={userData.html_url} target="_blank" rel="noopener noreferrer" className="profile-link">
+                            View Profile
+                        </a>
+                    </div>
                 </div>
             )}
         </div>
