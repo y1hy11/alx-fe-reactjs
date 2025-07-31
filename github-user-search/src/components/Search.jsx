@@ -60,6 +60,7 @@ const Search = () => {
                     <div className="flex-1">
                         <h2 className="text-2xl font-bold mb-1">{userData.name || userData.login}</h2>
                         <p className="text-gray-600 mb-3">@{userData.login}</p>
+                        {userData.location && <p className="text-gray-500 mb-3">📍 {userData.location}</p>}
                         {userData.bio && <p className="text-gray-700 mb-4">{userData.bio}</p>}
                         <div className="flex gap-6 mb-4 text-sm">
                             <span className="text-gray-600">
