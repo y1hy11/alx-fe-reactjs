@@ -5,15 +5,15 @@ const Search = () => {
     const [username, setUsername] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const [userData, setUserData] = useState(null);
+    const [users, setUsers] = useState([]); // Changed to array for multiple users
 
     const fetchUserData = async (username) => {
         try {
             const data = await getUserDetails(username);
-            setUserData(data);
+            setUsers([data]); // Wrap in array or append to existing users
         } catch {
             setError("Looks like we cant find the user");
-            setUserData(null);
+            setUsers([]);
         }
     };
 
@@ -22,7 +22,7 @@ const Search = () => {
         if (username.trim()) {
             setLoading(true);
             setError('');
-            setUserData(null);
+            setUsers([]);
             
             await fetchUserData(username.trim());
             setLoading(false);
@@ -49,8 +49,9 @@ const Search = () => {
 
             {loading && <div className="text-center text-gray-600">Loading...</div>}
             {error && <div className="text-red-500 text-center font-semibold">{error}</div>}
-            {userData && (
-                <div className="bg-white rounded-lg shadow-md p-6 mt-6 flex gap-6">
+            
+            {users.map((userData) => (
+                <div key={userData.id} className="bg-white rounded-lg shadow-md p-6 mt-6 flex gap-6">
                     <img 
                         src={userData.avatar_url} 
                         alt={userData.login} 
@@ -81,7 +82,7 @@ const Search = () => {
                         </a>
                     </div>
                 </div>
-            )}
+            ))}
         </div>
     );
 };
