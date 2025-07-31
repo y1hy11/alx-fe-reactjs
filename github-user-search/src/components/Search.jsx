@@ -5,12 +5,12 @@ const Search = () => {
     const [username, setUsername] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const [users, setUsers] = useState([]); // Changed to array for multiple users
+    const [users, setUsers] = useState([]);
 
     const fetchUserData = async (username) => {
         try {
             const data = await getUserDetails(username);
-            setUsers([data]); // Wrap in array or append to existing users
+            setUsers([data]); 
         } catch {
             setError("Looks like we cant find the user");
             setUsers([]);
