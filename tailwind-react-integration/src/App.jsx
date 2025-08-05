@@ -1,4 +1,4 @@
-import UserProfile from './components/userProfile'
+import UserProfile from './components/UserProfile'
 import './App.css'
 
 function App() {
