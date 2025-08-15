@@ -20,11 +20,11 @@ return (
                 </p>
             </div>
 
-            <div className="flex gap-[24px] justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[24px] justify-items-center">
                 {recipes.map((recipe) => (
                     <div 
                         key={recipe.id}
-                        className="bg-[#ffffff] rounded-[8px] shadow-md overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out w-full max-w-[320px]"
+                        className="bg-[#ffffff] rounded-[8px] shadow-md overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out w-full max-w-[520px]"
                     >
                         <div className="h-[192px] overflow-hidden">
                             <img 
