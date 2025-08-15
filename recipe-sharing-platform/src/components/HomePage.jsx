@@ -16,10 +16,19 @@ return (
                     <h1 className="text-[32px] md:text-[40px] font-bold text-[#4B5563] mb-[16px]">
                         Recipe Sharing Platform
                     </h1>
-                    <p className="text-[18px] text-[#4B5563] max-w-2xl mx-auto">
+                    <p className="text-[18px] text-[#4B5563] max-w-2xl mx-auto mb-6">
                         Discover delicious recipes from around the world and share your
                         culinary creations
                     </p>
+                    <Link 
+                        to="/add-recipe"
+                        className="inline-flex items-center text-[#4B5563] font-semibold hover:scale-105 transition-all duration-300 shadow-md"
+                    >
+                        <svg className="w-[25px] h-[25px] mr-[8px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        Add New Recipe
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-2 grid-cols-3 gap-[24px] justify-items-center p-[20px] sm:p-[40px] sm:max-w-[800px] mx-auto sm:grid-cols-1">

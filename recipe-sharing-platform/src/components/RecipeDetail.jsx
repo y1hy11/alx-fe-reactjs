@@ -53,10 +53,10 @@ const RecipeDetail = () => {
     return (
         <div className="min-h-screen py-8">
             <div className="p-[8px]">
-                <div className="mb-6">
+                <div className="m-[10px]">
                     <Link 
                         to="/" 
-                        className="inline-flex items-center hover:text-blue-700 transition-colors duration-300"
+                        className="inline-flex items-center text-[#4B5563] hover:scale-105 duration-300"
                     >
                         <svg className="w-[24px] h-[24px] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
