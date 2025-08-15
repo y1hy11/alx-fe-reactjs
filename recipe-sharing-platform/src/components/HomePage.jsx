@@ -22,7 +22,7 @@ return (
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-[24px] justify-items-center p-[20px] sm:p-[40px] sm:max-w-[800px] mx-auto sm:grid-cols-1">
+                <div className="grid grid-cols-2 grid-cols-3 gap-[24px] justify-items-center p-[20px] sm:p-[40px] sm:max-w-[800px] mx-auto sm:grid-cols-1">
                     {recipes.map((recipe) => (
                         <Link 
                             key={recipe.id}

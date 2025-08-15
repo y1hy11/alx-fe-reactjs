@@ -61,5 +61,57 @@
       "Season with salt to taste and garnish with fresh cilantro.",
       "Serve hot with basmati rice or naan bread."
     ]
+  },
+  { 
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "A quick and easy stir fry packed with colorful vegetables.",
+    "image": "https://asimplepalate.com/wp-content/uploads/2019/03/vegetable-stir-fry-15.jpg",
+    "prepTime": "10 minutes",
+    "cookTime": "15 minutes",
+    "servings": "4 people",
+    "ingredients": [
+      "2 tablespoons vegetable oil",
+      "1 bell pepper, sliced",
+      "1 cup broccoli florets",
+      "1 cup snap peas",
+      "2 carrots, sliced",
+      "3 cloves garlic, minced",
+      "2 tablespoons soy sauce",
+      "1 tablespoon sesame oil",
+      "Salt and pepper to taste",
+      "Cooked rice or noodles for serving"
+    ],
+    "instructions": [
+      "Heat vegetable oil in a large skillet or wok over medium-high heat.",
+      "Add bell pepper, broccoli, snap peas, and carrots. Stir fry for 5-7 minutes until vegetables are tender-crisp.",
+      "Add garlic and cook for an additional minute.",
+      "Stir in soy sauce and sesame oil. Season with salt and pepper to taste.",
+      "Serve hot over cooked rice or noodles."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Beef Tacos",
+    "summary": "Delicious beef tacos with fresh toppings.",
+    "image": "https://mytherapistcooks.com/wp-content/uploads/2018/04/IMG_6064.jpg",
+    "prepTime": "15 minutes",
+    "cookTime": "10 minutes",
+    "servings": "4 people",
+    "ingredients": [
+      "500g ground beef",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "1 tablespoon chili powder",
+      "1 teaspoon cumin",
+      "Salt and pepper to taste",
+      "8 small tortillas",
+      "Toppings: diced tomatoes, lettuce, cheese, sour cream"
+    ],
+    "instructions": [
+      "In a skillet, cook ground beef with onion and garlic until browned.",
+      "Stir in chili powder, cumin, salt, and pepper.",
+      "Warm tortillas and fill with beef mixture and desired toppings."
+    ]
   }
 ]
