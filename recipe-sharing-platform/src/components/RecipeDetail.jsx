@@ -76,7 +76,7 @@ const RecipeDetail = () => {
                         <img
                             src={recipe.image}
                             alt={recipe.title}
-                            className="w-[1000px] h-[600px] md:h-96 object-cover rounded-[12px]"
+                            className="w-[1000px] h-[600px] md:h-96 object-cover rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
                         />
                     </div>
 
