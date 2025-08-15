@@ -3,12 +3,63 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://therecipecritic.com/wp-content/uploads/2018/04/pasta-carbonara-15-667x1000.jpg"
+    "image": "https://therecipecritic.com/wp-content/uploads/2018/04/pasta-carbonara-15-667x1000.jpg",
+    "prepTime": "15 minutes",
+    "cookTime": "15 minutes",
+    "servings": "4 people",
+    "ingredients": [
+      "400g spaghetti",
+      "200g pancetta or bacon, diced",
+      "4 large eggs",
+      "100g Parmesan cheese, grated",
+      "2 cloves garlic, minced",
+      "Freshly ground black pepper",
+      "Salt to taste",
+      "2 tablespoons olive oil"
+    ],
+    "instructions": [
+      "Bring a large pot of salted water to boil and cook spaghetti according to package directions until al dente.",
+      "While pasta cooks, heat olive oil in a large skillet over medium heat. Add pancetta and cook until crispy, about 5-7 minutes.",
+      "In a bowl, whisk together eggs, grated Parmesan cheese, and a generous amount of black pepper.",
+      "Drain the pasta, reserving 1 cup of pasta water. Add hot pasta to the skillet with pancetta.",
+      "Remove skillet from heat and quickly pour in the egg mixture, tossing constantly to create a creamy sauce.",
+      "Add pasta water gradually if needed to achieve desired consistency. Season with salt and more pepper.",
+      "Serve immediately with additional Parmesan cheese and black pepper."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://sizzlingpots.com/wp-content/uploads/2020/08/Chicken-Tikka-Masala-scaled.jpg"
+    "image": "https://sizzlingpots.com/wp-content/uploads/2020/08/Chicken-Tikka-Masala-scaled.jpg",
+    "prepTime": "30 minutes",
+    "cookTime": "25 minutes",
+    "servings": "6 people",
+    "ingredients": [
+      "700g boneless chicken, cut into cubes",
+      "1 cup plain yogurt",
+      "2 tablespoons lemon juice",
+      "2 teaspoons minced fresh ginger",
+      "4 garlic cloves, minced",
+      "2 teaspoons garam masala",
+      "1 teaspoon cumin",
+      "1 teaspoon cayenne pepper",
+      "1 large onion, finely chopped",
+      "400g canned tomatoes",
+      "1 cup heavy cream",
+      "2 tablespoons tomato paste",
+      "1 tablespoon vegetable oil",
+      "Salt to taste",
+      "Fresh cilantro for garnish"
+    ],
+    "instructions": [
+      "In a bowl, combine yogurt, lemon juice, ginger, garlic, garam masala, cumin, and cayenne. Add chicken and marinate for at least 30 minutes.",
+      "Heat oil in a large skillet over medium-high heat. Cook marinated chicken until browned and cooked through, about 8-10 minutes.",
+      "Remove chicken and set aside. In the same skillet, sauté onions until softened, about 5 minutes.",
+      "Add tomato paste and cook for 1 minute. Add canned tomatoes and simmer for 10 minutes until sauce thickens.",
+      "Stir in heavy cream and return chicken to the skillet. Simmer for 5 minutes.",
+      "Season with salt to taste and garnish with fresh cilantro.",
+      "Serve hot with basmati rice or naan bread."
+    ]
   }
 ]
