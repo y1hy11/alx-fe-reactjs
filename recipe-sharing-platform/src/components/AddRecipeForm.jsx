@@ -17,7 +17,6 @@ const AddRecipeForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
-    // Handle input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -25,7 +24,6 @@ const AddRecipeForm = () => {
             [name]: value
         }));
         
-        // Clear error when user starts typing
         if (errors[name]) {
             setErrors(prev => ({
                 ...prev,
@@ -34,11 +32,9 @@ const AddRecipeForm = () => {
         }
     };
 
-    // Validation function
     const validateForm = () => {
         const newErrors = {};
 
-        // Required field validation
         if (!formData.title.trim()) {
             newErrors.title = 'Recipe title is required';
         }
@@ -50,7 +46,6 @@ const AddRecipeForm = () => {
         if (!formData.ingredients.trim()) {
             newErrors.ingredients = 'Ingredients are required';
         } else {
-            // Check if ingredients list has at least 2 items (split by newline or comma)
             const ingredientsList = formData.ingredients.split(/\n|,/).filter(item => item.trim());
             if (ingredientsList.length < 2) {
                 newErrors.ingredients = 'Please provide at least 2 ingredients';
@@ -60,7 +55,6 @@ const AddRecipeForm = () => {
         if (!formData.instructions.trim()) {
             newErrors.instructions = 'Preparation steps are required';
         } else {
-            // Check if instructions have at least 2 steps
             const instructionsList = formData.instructions.split('\n').filter(step => step.trim());
             if (instructionsList.length < 2) {
                 newErrors.instructions = 'Please provide at least 2 preparation steps';
@@ -70,7 +64,6 @@ const AddRecipeForm = () => {
         if (!formData.image.trim()) {
             newErrors.image = 'Recipe image URL is required';
         } else {
-            // Basic URL validation
             const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
             if (!urlPattern.test(formData.image)) {
                 newErrors.image = 'Please provide a valid image URL';
@@ -81,7 +74,6 @@ const AddRecipeForm = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -92,10 +84,8 @@ const AddRecipeForm = () => {
         setIsSubmitting(true);
         
         try {
-            // Simulate API call (as per original task requirements)
             await new Promise(resolve => setTimeout(resolve, 1500));
             
-            // Process the form data for display/logging
             const processedRecipe = {
                 title: formData.title.trim(),
                 summary: formData.summary.trim(),
@@ -110,7 +100,6 @@ const AddRecipeForm = () => {
             console.log('Recipe submitted:', processedRecipe);
             setSubmitSuccess(true);
             
-            // Reset form after successful submission
             setFormData({
                 title: '',
                 summary: '',
@@ -122,7 +111,6 @@ const AddRecipeForm = () => {
                 image: ''
             });
             
-            // Hide success message after 3 seconds
             setTimeout(() => setSubmitSuccess(false), 3000);
             
         } catch (error) {
