@@ -1,9 +1,12 @@
+import FormikForm from './components/formikForm'
 import './App.css'
 
 function App() {
 
   return (
-    <></>
+    <>
+    <FormikForm />
+    </>
   )
 }
 
