@@ -1,34 +1,30 @@
 import { useState } from 'react';
 
 const RegistrationForm = () => {
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: ''
-    });
-
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+        if (name === 'username') setUsername(value);
+        if (name === 'email') setEmail(value);
+        if (name === 'password') setPassword(value);
     };
 
     const validateForm = () => {
         const newErrors = {};
         
-        if (!formData.username.trim()) {
+        if (!username.trim()) {
             newErrors.username = 'Username is required';
         }
         
-        if (!formData.email.trim()) {
+        if (!email.trim()) {
             newErrors.email = 'Email is required';
         }
         
-        if (!formData.password.trim()) {
+        if (!password.trim()) {
             newErrors.password = 'Password is required';
         }
         
@@ -40,9 +36,10 @@ const RegistrationForm = () => {
         const validationErrors = validateForm();
         
         if (Object.keys(validationErrors).length === 0) {
-            console.log('Form submitted:', formData);
-            // Handle successful submission here
-            setFormData({ username: '', email: '', password: '' });
+            console.log('Form submitted:', { username, email, password });
+            setUsername('');
+            setEmail('');
+            setPassword('');
             setErrors({});
         } else {
             setErrors(validationErrors);
@@ -57,7 +54,7 @@ const RegistrationForm = () => {
                     type="text"
                     id="username"
                     name="username"
-                    value={formData.username}
+                    value={username}
                     onChange={handleChange}
                 />
                 {errors.username && <span style={{color: 'red'}}>{errors.username}</span>}
@@ -69,7 +66,7 @@ const RegistrationForm = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
+                    value={email}
                     onChange={handleChange}
                 />
                 {errors.email && <span style={{color: 'red'}}>{errors.email}</span>}
@@ -81,7 +78,7 @@ const RegistrationForm = () => {
                     type="password"
                     id="password"
                     name="password"
-                    value={formData.password}
+                    value={password}
                     onChange={handleChange}
                 />
                 {errors.password && <span style={{color: 'red'}}>{errors.password}</span>}
