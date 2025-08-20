@@ -26,8 +26,10 @@ const PostsComponent = () => {
         queryKey: ['posts'],
         queryFn: fetchPosts,
         staleTime: 30 * 1000,
+        cacheTime: 5 * 60 * 1000,
         gcTime: 5 * 60 * 1000,
         refetchOnWindowFocus: false,
+        keepPreviousData: true,
     });
 
     const handleRefetch = () => {
@@ -137,6 +139,7 @@ const PostsComponent = () => {
                     <p>• <strong>Stale Time:</strong> Data stays "fresh" for 30 seconds, then becomes "stale"</p>
                     <p>• <strong>Background Updates:</strong> Click "Refetch Data" to see background updates</p>
                     <p>• <strong>Network Monitoring:</strong> Open dev tools → Network tab to see API call patterns</p>
+                    <p>• <strong>Keep Previous Data:</strong> Previous data is retained during refetches to prevent loading states</p>
                 </div>
                 <div>
                     <p>
