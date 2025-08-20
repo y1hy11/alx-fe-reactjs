@@ -17,6 +17,7 @@ const PostsComponent = () => {
         data: posts,
         isLoading,
         error,
+        isError,
         refetch,
         isFetching,
         dataUpdatedAt,
@@ -48,7 +49,7 @@ const PostsComponent = () => {
         );
     }
 
-    if (error) {
+    if (isError) {
         return (
             <div>
                 <div>
