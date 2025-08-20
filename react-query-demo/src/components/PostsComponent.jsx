@@ -8,7 +8,7 @@ const PostsComponent = () => {
         console.log('🔄 Fetching posts from API...');
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
         if (!response.ok) {
-            throw new Error('Failed to fetch posts');
+            throw new isError('Failed to fetch posts');
         }
         return response.json();
     };
@@ -16,7 +16,7 @@ const PostsComponent = () => {
     const {
         data: posts,
         isLoading,
-        error,
+        isError,
         refetch,
         isFetching,
         dataUpdatedAt,
@@ -48,11 +48,11 @@ const PostsComponent = () => {
         );
     }
 
-    if (error) {
+    if (isError) {
         return (
             <div>
                 <div>
-                    ❌ Error: {error.message}
+                    ❌ Error: {isError.message}
                     <button onClick={handleRefetch}>
                         Retry
                     </button>
