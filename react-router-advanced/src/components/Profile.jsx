@@ -1,5 +1,7 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Routes, Route } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
 
 const Profile = () => {
   const { user } = useAuth();
@@ -14,7 +16,6 @@ const Profile = () => {
       <h1>User Profile</h1>
       <p>Welcome to your profile, {user?.username}!</p>
       
-      {/* Navigation for nested routes */}
       <nav style={{
         backgroundColor: '#f8f9fa',
         padding: '1rem',
@@ -61,7 +62,6 @@ const Profile = () => {
         </div>
       </nav>
 
-      {/* This is where nested route components will be rendered */}
       <div style={{
         minHeight: '300px',
         border: '1px solid #e0e0e0',
@@ -69,7 +69,11 @@ const Profile = () => {
         padding: '1.5rem',
         backgroundColor: '#fff'
       }}>
-        <Outlet />
+        <Routes>
+          <Route index element={<div>Profile Overview - Select a section from the navigation above.</div>} />
+          <Route path="details" element={<ProfileDetails />} />
+          <Route path="settings" element={<ProfileSettings />} />
+        </Routes>
       </div>
     </div>
   );
