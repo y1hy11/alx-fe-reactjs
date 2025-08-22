@@ -48,10 +48,9 @@ const TodoList = () => {
         ) : (
           <ul>
             {todos.map(todo => (
-              <li key={todo.id} className={`todo-item ${todo.completed ? 'completed' : ''}`} data-testid="todo-item">
+              <li key={todo.id} className={`todo-item ${todo.completed ? 'completed' : ''}`}>
                 <span 
                   className="todo-text"
-                  data-testid="todo-text"
                   onClick={() => toggleTodo(todo.id)}
                   style={{
                     textDecoration: todo.completed ? 'line-through' : 'none',
@@ -63,7 +62,6 @@ const TodoList = () => {
                 </span>
                 <button 
                   className="delete-btn"
-                  data-testid="delete-button"
                   onClick={() => deleteTodo(todo.id)}
                   title="Delete todo"
                 >
