@@ -7,7 +7,7 @@ import About from './pages/About';
 import Login from './pages/Login';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-import Profile from './pages/Profile';
+import Profile from './components/Profile';
 import NotFound from './pages/NotFound';
 import ProfileOverview from './components/ProfileOverview';
 import ProfileDetails from './components/ProfileDetails';
