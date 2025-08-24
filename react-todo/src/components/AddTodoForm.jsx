@@ -8,7 +8,7 @@ const AddTodoForm = ({ onAddTodo }) => {
     
     if (inputValue.trim() !== '') {
       onAddTodo(inputValue);
-      setInputValue(''); // Clear input after adding
+      setInputValue('');
     }
   };
 

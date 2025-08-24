@@ -2,7 +2,6 @@ import { useState } from 'react';
 import AddTodoForm from './AddTodoForm';
 
 const TodoList = () => {
-  // Initialize state with demonstration todos
   const [todos, setTodos] = useState([
     { id: 1, text: 'Learn React', completed: false },
     { id: 2, text: 'Build a Todo App', completed: false },
@@ -10,11 +9,10 @@ const TodoList = () => {
     { id: 4, text: 'Master CSS', completed: false }
   ]);
 
-  // Method to add a new todo
   const addTodo = (text) => {
     if (text.trim() !== '') {
       const newTodo = {
-        id: Date.now(), // Simple ID generation
+        id: Date.now(), 
         text: text.trim(),
         completed: false
       };
@@ -22,14 +20,12 @@ const TodoList = () => {
     }
   };
 
-  // Method to toggle todo completion status
   const toggleTodo = (id) => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
 
-  // Method to delete a todo
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
@@ -38,10 +34,8 @@ const TodoList = () => {
     <div className="todo-container">
       <h1>Todo List</h1>
       
-      {/* Add Todo Form Component */}
       <AddTodoForm onAddTodo={addTodo} />
       
-      {/* Todo List Display */}
       <div className="todo-list">
         {todos.length === 0 ? (
           <p className="no-todos">No todos yet. Add one above!</p>
@@ -73,7 +67,6 @@ const TodoList = () => {
         )}
       </div>
       
-      {/* Todo Statistics */}
       <div className="todo-stats">
         <p>
           Total: {todos.length} | 
