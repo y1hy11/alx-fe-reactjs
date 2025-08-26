@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
-import TodoList from '../components/TodoList.jsx';
+import TodoList from './TodoList.jsx';
 
 describe('TodoList Component', () => {
   describe('Initial Render Tests', () => {
@@ -337,6 +336,84 @@ describe('TodoList Component', () => {
       
       // Check final count (4 initial + 3 added = 7)
       expect(screen.getByText(/Total: 7/)).toBeInTheDocument();
+    });
+  });
+
+  describe('FireEvent Tests', () => {
+    test('can add todo using fireEvent', () => {
+      render(<TodoList />);
+      
+      const input = screen.getByPlaceholderText('Enter a new todo...');
+      const addButton = screen.getByText('Add Todo');
+      
+      // Use fireEvent to change input value
+      fireEvent.change(input, { target: { value: 'FireEvent Todo' } });
+      fireEvent.click(addButton);
+      
+      // Check if the new todo appears
+      expect(screen.getByText('FireEvent Todo')).toBeInTheDocument();
+      
+      // Check if input is cleared after adding
+      expect(input).toHaveValue('');
+    });
+
+    test('can toggle todo completion using fireEvent', () => {
+      render(<TodoList />);
+      
+      // Find an incomplete todo
+      const learnReactTodo = screen.getByText('Learn React');
+      
+      // Initially should not have line-through
+      expect(learnReactTodo).toHaveStyle('text-decoration: none');
+      
+      // Use fireEvent to click
+      fireEvent.click(learnReactTodo);
+      
+      // Should now have line-through style
+      expect(learnReactTodo).toHaveStyle('text-decoration: line-through');
+      expect(learnReactTodo).toHaveStyle('opacity: 0.6');
+    });
+
+    test('can delete todo using fireEvent', () => {
+      render(<TodoList />);
+      
+      // Get initial count
+      const initialTodos = screen.getAllByTestId('todo-item');
+      const initialCount = initialTodos.length;
+      
+      // Find and click delete button using fireEvent
+      const deleteButtons = screen.getAllByTestId('delete-button');
+      fireEvent.click(deleteButtons[0]);
+      
+      // Check that todo count decreased
+      const remainingTodos = screen.getAllByTestId('todo-item');
+      expect(remainingTodos).toHaveLength(initialCount - 1);
+    });
+
+    test('can add todo by pressing Enter using fireEvent', () => {
+      render(<TodoList />);
+      
+      const input = screen.getByPlaceholderText('Enter a new todo...');
+      
+      // Type and press Enter using fireEvent
+      fireEvent.change(input, { target: { value: 'FireEvent Enter Todo' } });
+      fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
+      
+      // Check if the new todo appears
+      expect(screen.getByText('FireEvent Enter Todo')).toBeInTheDocument();
+    });
+
+    test('input focus and blur events using fireEvent', () => {
+      render(<TodoList />);
+      
+      const input = screen.getByPlaceholderText('Enter a new todo...');
+      
+      // Test focus and blur events
+      fireEvent.focus(input);
+      expect(input).toHaveFocus();
+      
+      fireEvent.blur(input);
+      expect(input).not.toHaveFocus();
     });
   });
 });
